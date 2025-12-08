@@ -1,0 +1,174 @@
+/* New Styles for Beranda Design */
+
+/* Catalog Preview Cards */
+.catalog-preview-card {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.catalog-preview-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.preview-image {
+    height: 200px;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.preview-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.preview-name {
+    font-weight: 600;
+    color: var(--maroon);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.preview-category {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.preview-price {
+    font-weight: 600;
+    color: var(--maroon);
+    font-size: 1.1rem;
+}
+
+/* Simple Category Cards */
+.category-card-simple {
+    background: var(--white);
+    padding: 2rem 1rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.category-card-simple:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.category-card-simple .category-name {
+    color: var(--maroon);
+    font-weight: 600;
+    margin: 0;
+}
+
+/* Simple Steps */
+.steps-simple {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.step-simple {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    padding: 0.5rem 0;
+}
+
+.step-simple:last-child {
+    margin-bottom: 0;
+}
+
+.step-number {
+    background: var(--maroon);
+    color: var(--white);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-right: 1rem;
+    flex-shrink: 0;
+}
+
+.step-text {
+    color: #333;
+    line-height: 1.5;
+}
+
+/* Updated Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, var(--maroon) 0%, var(--light-maroon) 100%);
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    color: var(--white);
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+/* Updated Section Titles */
+.section-title {
+    font-size: 2.5rem;
+    color: var(--maroon);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+/* Booking Section */
+.bg-maroon {
+    background: var(--maroon) !important;
+}
+
+/* Responsive Updates */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .step-simple {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .step-number {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-title {
+        font-size: 1.8rem;
+    }
+    
+    .steps-simple {
+        padding: 1.5rem;
+    }
+}

@@ -1,0 +1,30 @@
+/* Warna Maroon Theme */
+:root {
+  --maroon: #800000;
+  --maroon-dark: #600000;
+  --maroon-light: #a00000;
+}
+
+.bg-maroon {
+  background-color: var(--maroon) !important;
+}
+
+.btn-maroon {
+  background-color: var(--maroon);
+  border-color: var(--maroon);
+  color: white;
+}
+
+.btn-maroon:hover {
+  background-color: var(--maroon-dark);
+  border-color: var(--maroon-dark);
+  color: white;
+}
+
+.card-maroon {
+  border-top: 3px solid var(--maroon);
+}
+
+.text-maroon {
+  color: var(--maroon) !important;
+}
