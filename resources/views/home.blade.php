@@ -182,10 +182,7 @@
 
 {{-- ============================ CONTACT ============================ --}}
 <section id="contact" class="booking-section">
-    <div class="booking-overlay">
-        <h2 class="booking-title">
-            For <em>More</em> Booking Information
-        </h2>
+    <div class="booking">
         <a class="whatsapp-button" 
            href="https://wa.me/6282196562082" target="_blank">
            WhatsApp
@@ -372,8 +369,26 @@ body { margin:0; font-family:'Times New Roman', serif; color:#4b2c2c; }
 .hero-section { 
     height:100vh; 
     background:url('{{ asset("images/hero-bg.jpg") }}') center/cover no-repeat; 
-    padding-top:75px; /* Disesuaikan untuk navbar dengan logo */
+    padding-top:75px;
+    position: relative; /* tambah ini */
 }
+
+
+.hero-section::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 120px; 
+    background: linear-gradient(
+        to bottom, 
+        transparent, 
+        #f9f5f0
+    );
+    pointer-events: none;
+}
+
 
 /* ... SISA CSS SAMA TIDAK DIUBAH ... */
 
@@ -385,6 +400,21 @@ body { margin:0; font-family:'Times New Roman', serif; color:#4b2c2c; }
     overflow: hidden;
     background: #f9f5f0;
 }
+.catalog-section::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 120px; /* sesuaikan */
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        #ffffff   /* atau warna background kategori */
+    );
+    pointer-events: none;
+}
+
 .section-title { 
     font-size:48px; 
     margin-bottom:40px; 
@@ -521,6 +551,21 @@ body { margin:0; font-family:'Times New Roman', serif; color:#4b2c2c; }
 .category-section {
     padding: 80px 0;
     background: white;
+    position: relative;
+}
+.category-section::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 120px; /* bisa disesuaikan */
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        #f9f5f0  
+    );
+    pointer-events: none;
 }
 .category-list { 
     width:70%; 
