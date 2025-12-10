@@ -10,7 +10,7 @@
 
 <body>
 
-{{-- ============================ NAVBAR ============================ --}}
+<!--NAVBAR-->
 <header class="main-header">
     <nav class="navbar">
         <div class="container-nav">
@@ -41,11 +41,11 @@
 </header>
 
 
-{{-- ============================ HERO ============================ --}}
+<!--HERO-->
 <section class="hero-section"></section>
 
 
-{{-- ============================ CATALOG ============================ --}}
+<!--CATALOG-->
 <section id="catalog" class="catalog-section">
 
     <h2 class="section-title">Catalog</h2>
@@ -117,7 +117,7 @@
 </section>
 
 
-{{-- ============================ CATEGORY ============================ --}}
+<!--CATEGORY-->
 <section id="category" class="category-section">
 
     <h2 class="section-title">Category</h2>
@@ -140,7 +140,7 @@
 </section>
 
 
-{{-- ============================ HOW TO ORDER ============================ --}}
+<!--HOW TO ORDER-->
 <section id="how-to-order" class="how-to-order-section">
 
     <div class="container how-to-order-container">
@@ -180,7 +180,7 @@
 </section>
 
 
-{{-- ============================ CONTACT ============================ --}}
+<!--CONTACT-->
 <section id="contact" class="booking-section">
     <div class="booking">
         <a class="whatsapp-button" 
@@ -191,7 +191,7 @@
 </section>
 
 
-{{-- ============================ FOOTER ============================ --}}
+<!--FOOTER-->
 <footer class="footer">
 
     <div class="footer-container">
@@ -233,6 +233,41 @@
 
 </footer>
 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Set index variable untuk animation delay
+    const catalogCards = document.querySelectorAll('.catalog-card');
+    catalogCards.forEach((card, index) => {
+        card.style.setProperty('--i', index);
+    });
+
+    function isElementInViewport(el) {
+        const rect = el.getBoundingClientRect();
+        return (
+            rect.top <= (window.innerHeight * 0.8) &&
+            rect.bottom >= 0
+        );
+    }
+
+    function animateOnScroll() {
+        const targets = document.querySelectorAll(
+            '.category-list li, .step-item, .booking-overlay'
+        );
+
+        targets.forEach(el => {
+            if (isElementInViewport(el)) {
+                el.classList.add('animate');
+            }
+        });
+    }
+
+    animateOnScroll();
+
+    window.addEventListener('scroll', animateOnScroll);
+    window.addEventListener('resize', animateOnScroll);
+
+});
+</script>
 
 <style>
 /* GLOBAL */
@@ -563,7 +598,7 @@ body { margin:0; font-family:'Times New Roman', serif; color:#4b2c2c; }
     background: linear-gradient(
         to bottom,
         transparent,
-        #f9f5f0  
+        #FFF3E4  
     );
     pointer-events: none;
 }
@@ -952,42 +987,6 @@ body { margin:0; font-family:'Times New Roman', serif; color:#4b2c2c; }
     }
 }
 </style>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Set index variable untuk animation delay
-    const catalogCards = document.querySelectorAll('.catalog-card');
-    catalogCards.forEach((card, index) => {
-        card.style.setProperty('--i', index);
-    });
-
-    function isElementInViewport(el) {
-        const rect = el.getBoundingClientRect();
-        return (
-            rect.top <= (window.innerHeight * 0.8) &&
-            rect.bottom >= 0
-        );
-    }
-
-    function animateOnScroll() {
-        const targets = document.querySelectorAll(
-            '.category-list li, .step-item, .booking-overlay'
-        );
-
-        targets.forEach(el => {
-            if (isElementInViewport(el)) {
-                el.classList.add('animate');
-            }
-        });
-    }
-
-    animateOnScroll();
-
-    window.addEventListener('scroll', animateOnScroll);
-    window.addEventListener('resize', animateOnScroll);
-
-});
-</script>
 
 </body>
 </html>

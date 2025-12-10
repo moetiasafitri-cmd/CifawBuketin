@@ -2,6 +2,77 @@
 <html>
 <head>
     <title>Manage Orders - Admin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="header">
+        <h1><i class="fas fa-list"></i> MANAGE ORDERS</h1>
+        <p>Kelola semua pesanan dari customer</p>
+    </div>
+
+    <div class="container">
+        <a href="{{ route('admin.dashboard') }}" class="back-btn">
+            <i class="fas fa-arrow-left"></i> Back to Dashboard
+        </a>
+
+        <div class="orders-table">
+            <div class="table-header">
+                <div class="table-row">
+                    <div>Order ID</div>
+                    <div>Customer</div>
+                    <div>Total</div>
+                    <div>Status</div>
+                    <div>Actions</div>
+                </div>
+            </div>
+            
+            <div class="table-body">
+                @forelse($orders as $order)
+                            <div class="table-row">
+                <div>#{{ $order->id }}</div>
+                <div>
+                    <!-- ✅ PERBAIKI: Akses langsung dari order, bukan dari relationship -->
+                    <strong>{{ $order->customer_name }}</strong><br>
+                    <small>{{ $order->customer_phone }}</small><br>
+                    <small>{{ $order->customer_address }}</small>
+                </div>
+                <div>Rp {{ number_format($order->total_price, 0, ',', '.') }}</div>
+                <div class="status-{{ $order->status }}">
+                    {{ strtoupper($order->status) }}
+                </div>
+                <div>
+                    <a href="{{ route('admin.order.show', $order->id) }}" class="btn-action btn-view">
+                        <i class="fas fa-eye"></i> View
+                    </a>
+                    
+                    @if($order->status == 'pending')
+                    <form action="{{ route('admin.order.accept', $order->id) }}" method="POST" style="display: inline;">
+                        @csrf
+                        <button type="submit" class="btn-action btn-accept">
+                            <i class="fas fa-check"></i> Accept
+                        </button>
+                    </form>
+                    @endif
+                </div>
+            </div>
+                @empty
+                <div class="empty-state">
+                    <i class="fas fa-inbox" style="font-size: 48px; color: #ccc; margin-bottom: 20px;"></i>
+                    <h3>No Orders Yet</h3>
+                    <p>Belum ada pesanan yang masuk</p>
+                </div>
+                @endforelse
+            </div>
+        </div>
+
+        <!-- Pagination -->
+        @if($orders->hasPages())
+        <div style="margin-top: 20px; text-align: center;">
+            {{ $orders->links() }}
+        </div>
+        @endif
+    </div>
+
     <style>
         :root {
             --maroon: #4b0000;
@@ -86,76 +157,5 @@
             color: #666;
         }
     </style>
-</head>
-<body>
-    <div class="header">
-        <h1><i class="fas fa-list"></i> MANAGE ORDERS</h1>
-        <p>Kelola semua pesanan dari customer</p>
-    </div>
-
-    <div class="container">
-        <a href="{{ route('admin.dashboard') }}" class="back-btn">
-            <i class="fas fa-arrow-left"></i> Back to Dashboard
-        </a>
-
-        <div class="orders-table">
-            <div class="table-header">
-                <div class="table-row">
-                    <div>Order ID</div>
-                    <div>Customer</div>
-                    <div>Total</div>
-                    <div>Status</div>
-                    <div>Actions</div>
-                </div>
-            </div>
-            
-            <div class="table-body">
-                @forelse($orders as $order)
-                            <div class="table-row">
-                <div>#{{ $order->id }}</div>
-                <div>
-                    <!-- ✅ PERBAIKI: Akses langsung dari order, bukan dari relationship -->
-                    <strong>{{ $order->customer_name }}</strong><br>
-                    <small>{{ $order->customer_phone }}</small><br>
-                    <small>{{ $order->customer_address }}</small>
-                </div>
-                <div>Rp {{ number_format($order->total_price, 0, ',', '.') }}</div>
-                <div class="status-{{ $order->status }}">
-                    {{ strtoupper($order->status) }}
-                </div>
-                <div>
-                    <a href="{{ route('admin.order.show', $order->id) }}" class="btn-action btn-view">
-                        <i class="fas fa-eye"></i> View
-                    </a>
-                    
-                    @if($order->status == 'pending')
-                    <form action="{{ route('admin.order.accept', $order->id) }}" method="POST" style="display: inline;">
-                        @csrf
-                        <button type="submit" class="btn-action btn-accept">
-                            <i class="fas fa-check"></i> Accept
-                        </button>
-                    </form>
-                    @endif
-                </div>
-            </div>
-                @empty
-                <div class="empty-state">
-                    <i class="fas fa-inbox" style="font-size: 48px; color: #ccc; margin-bottom: 20px;"></i>
-                    <h3>No Orders Yet</h3>
-                    <p>Belum ada pesanan yang masuk</p>
-                </div>
-                @endforelse
-            </div>
-        </div>
-
-        <!-- Pagination -->
-        @if($orders->hasPages())
-        <div style="margin-top: 20px; text-align: center;">
-            {{ $orders->links() }}
-        </div>
-        @endif
-    </div>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </body>
 </html>

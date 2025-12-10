@@ -2,24 +2,7 @@
 <html>
 <head>
     <title>Manage Products - Admin</title>
-    <style>
-        :root { --maroon: #4b0000; --maroon-dark: #4b0000; }
-        body { font-family: 'Segoe UI', Arial; margin: 0; padding: 0; background: #f5f5f5; }
-        .header { background: linear-gradient(135deg, var(--maroon), var(--maroon-dark)); color: white; padding: 20px 0; text-align: center; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-        .back-btn, .add-btn { background: var(--maroon); color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-bottom: 20px; display: inline-block; }
-        .add-btn { background: #27ae60; margin-left: 10px; }
-        .products-table { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 15px rgba(0,0,0,0.1); }
-        .table-header { background: var(--maroon); color: white; padding: 15px; font-weight: bold; }
-        .table-row { display: grid; grid-template-columns: 100px 2fr 1fr 1fr 150px 150px; padding: 15px; border-bottom: 1px solid #eee; align-items: center; }
-        .product-img { width: 80px; height: 80px; object-fit: cover; border-radius: 8px; }
-        .status-active { color: #27ae60; font-weight: bold; }
-        .status-inactive { color: #4b0000; font-weight: bold; }
-        .btn-action { padding: 5px 10px; border: none; border-radius: 3px; cursor: pointer; font-size: 12px; margin-right: 5px; }
-        .btn-edit { background: #3498db; color: white; }
-        .btn-delete { background: #e74c3c; color: white; }
-        .btn-view { background: #9b59b6; color: white; }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div class="header">
@@ -125,6 +108,23 @@
         </div>
     </div>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { --maroon: #4b0000; --maroon-dark: #4b0000; }
+        body { font-family: 'Segoe UI', Arial; margin: 0; padding: 0; background: #f5f5f5; }
+        .header { background: linear-gradient(135deg, var(--maroon), var(--maroon-dark)); color: white; padding: 20px 0; text-align: center; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .back-btn, .add-btn { background: var(--maroon); color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-bottom: 20px; display: inline-block; }
+        .add-btn { background: #27ae60; margin-left: 10px; }
+        .products-table { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 15px rgba(0,0,0,0.1); }
+        .table-header { background: var(--maroon); color: white; padding: 15px; font-weight: bold; }
+        .table-row { display: grid; grid-template-columns: 100px 2fr 1fr 1fr 150px 150px; padding: 15px; border-bottom: 1px solid #eee; align-items: center; }
+        .product-img { width: 80px; height: 80px; object-fit: cover; border-radius: 8px; }
+        .status-active { color: #27ae60; font-weight: bold; }
+        .status-inactive { color: #4b0000; font-weight: bold; }
+        .btn-action { padding: 5px 10px; border: none; border-radius: 3px; cursor: pointer; font-size: 12px; margin-right: 5px; }
+        .btn-edit { background: #3498db; color: white; }
+        .btn-delete { background: #e74c3c; color: white; }
+        .btn-view { background: #9b59b6; color: white; }
+    </style>
 </body>
 </html>

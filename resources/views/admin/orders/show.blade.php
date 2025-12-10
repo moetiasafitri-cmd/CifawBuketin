@@ -2,20 +2,7 @@
 <html>
 <head>
     <title>Order Details - Admin</title>
-    <style>
-        :root { --maroon: #800000; --maroon-dark: #600000; }
-        body { font-family: 'Segoe UI', Arial; margin: 0; padding: 0; background: #f5f5f5; }
-        .header { background: linear-gradient(135deg, var(--maroon), var(--maroon-dark)); color: white; padding: 20px 0; text-align: center; }
-        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
-        .back-btn { background: var(--maroon); color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-bottom: 20px; display: inline-block; }
-        .order-card { background: white; border-radius: 10px; padding: 25px; box-shadow: 0 2px 15px rgba(0,0,0,0.1); margin-bottom: 20px; }
-        .order-info { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px; }
-        .order-items { margin-top: 20px; }
-        .item-row { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; padding: 10px; border-bottom: 1px solid #eee; }
-        .item-header { background: var(--maroon); color: white; font-weight: bold; }
-        .status-accepted { color: #27ae60; font-weight: bold; }
-        .status-pending { color: #e74c3c; font-weight: bold; }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div class="header">
@@ -76,6 +63,19 @@
         </div>
     </div>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { --maroon: #800000; --maroon-dark: #600000; }
+        body { font-family: 'Segoe UI', Arial; margin: 0; padding: 0; background: #f5f5f5; }
+        .header { background: linear-gradient(135deg, var(--maroon), var(--maroon-dark)); color: white; padding: 20px 0; text-align: center; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+        .back-btn { background: var(--maroon); color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-bottom: 20px; display: inline-block; }
+        .order-card { background: white; border-radius: 10px; padding: 25px; box-shadow: 0 2px 15px rgba(0,0,0,0.1); margin-bottom: 20px; }
+        .order-info { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px; }
+        .order-items { margin-top: 20px; }
+        .item-row { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; padding: 10px; border-bottom: 1px solid #eee; }
+        .item-header { background: var(--maroon); color: white; font-weight: bold; }
+        .status-accepted { color: #27ae60; font-weight: bold; }
+        .status-pending { color: #e74c3c; font-weight: bold; }
+    </style>
 </body>
 </html>

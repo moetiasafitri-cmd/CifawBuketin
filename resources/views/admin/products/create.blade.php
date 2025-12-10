@@ -2,20 +2,7 @@
 <html>
 <head>
     <title>Add Product - Admin</title>
-    <style>
-        :root { --maroon: #4b0000; --maroon-dark: #4b0000; }
-        body { font-family: 'Segoe UI', Arial; margin: 0; padding: 0; background: #f5f5f5; }
-        .header { background: linear-gradient(135deg, var(--maroon), var(--maroon-dark)); color: white; padding: 20px 0; text-align: center; }
-        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
-        .back-btn { background: var(--maroon); color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-bottom: 20px; display: inline-block; }
-        .form-card { background: white; border-radius: 10px; padding: 30px; box-shadow: 0 2px 15px rgba(0,0,0,0.1); }
-        .form-group { margin-bottom: 20px; }
-        label { display: block; margin-bottom: 8px; font-weight: bold; color: var(--maroon); }
-        input, textarea, select { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px; }
-        textarea { min-height: 100px; }
-        .btn-submit { background: var(--maroon); color: white; padding: 12px 30px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; }
-        .checkbox-group { display: flex; align-items: center; gap: 10px; }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div class="header">
@@ -89,6 +76,19 @@
         </div>
     </div>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { --maroon: #4b0000; --maroon-dark: #4b0000; }
+        body { font-family: 'Segoe UI', Arial; margin: 0; padding: 0; background: #f5f5f5; }
+        .header { background: linear-gradient(135deg, var(--maroon), var(--maroon-dark)); color: white; padding: 20px 0; text-align: center; }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
+        .back-btn { background: var(--maroon); color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-bottom: 20px; display: inline-block; }
+        .form-card { background: white; border-radius: 10px; padding: 30px; box-shadow: 0 2px 15px rgba(0,0,0,0.1); }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 8px; font-weight: bold; color: var(--maroon); }
+        input, textarea, select { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px; }
+        textarea { min-height: 100px; }
+        .btn-submit { background: var(--maroon); color: white; padding: 12px 30px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; }
+        .checkbox-group { display: flex; align-items: center; gap: 10px; }
+    </style>
 </body>
 </html>
