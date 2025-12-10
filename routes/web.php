@@ -71,11 +71,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/products/{id}/edit', [AdminProductController::class, 'edit'])->name('admin.products.edit');
     Route::put('/admin/products/{id}', [AdminProductController::class, 'update'])->name('admin.products.update');
     Route::delete('/admin/products/{id}', [AdminProductController::class, 'destroy'])->name('admin.products.destroy');
-    Route::prefix('admin')->name('admin.')->group(function () {
-    Route::resource('products', ProductController::class);
-
-});
-
 });
 
 // ======================================================
